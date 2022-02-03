@@ -9,9 +9,10 @@
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    background-color: #c5e4e7;
+    max-width: 1440px;
+    min-width: 375px;
+    margin: 0 auto;
+    background-color: #bbe1e6;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,12 +20,14 @@ body {
   }
 
 .logo {
-  margin-bottom: 6%;
+  margin-top: 5%;
 }
 
 .container {
-  width: 800px;
+  width: 90%;
+  margin: 5% auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 20px;
   background-color: white;
@@ -33,7 +36,8 @@ body {
 }
 
 .left {
-  width: 370px;
+  /* margin: 0 auto; */
+  width: 100%;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -43,7 +47,7 @@ body {
 
 .left p {
   margin: 3% 0;
-  color: #03474b;
+  color: #031a4b;
   font-weight: 700;
 }
 
@@ -72,7 +76,7 @@ body {
 ::placeholder {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #03474b;
+  color: #031a4b;
 }
 
 /* Rmove the input spinner */
@@ -97,22 +101,22 @@ input::-webkit-inner-spin-button {
   width: calc(90%/3);
   margin: 2% 0;
   padding: 3% 1%;
-  background-color: #03474b;
+  background-color: #031a4b;
   border-radius: 5px;
   font-weight: 700;
-  color: #FFF;
+  color: #e9f4f4;
   border: none;
   cursor: pointer;
 }
 
 .tip_buttons button.active {
-  background-color: #2fc2ad;
-  color: #03474b;
+  background-color: #77a1fc;
+  color: #031a4b;
 }
 
 .tip_buttons button.custom {
   background-color: #f3f8fb;
-  color: #03474b;
+  color: #031a4b;
 }
 
 .people {
@@ -120,9 +124,9 @@ input::-webkit-inner-spin-button {
 }
 
 .right {
-  width: 370px;
+  width: 100%;
   padding: 40px 30px;
-  background-color: #03474b;
+  background-color: #031a4b;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -143,30 +147,44 @@ input::-webkit-inner-spin-button {
 .amount p {
   display: flex;
   flex-direction: column;
-  color: #f3f8fb;
+  color: #e9f4f4;
   font-size: .85rem;
   font-weight: 700;
 }
 
 .amount p span {
-  color: #2fc2ad;
+  color: #77a1fc;
   font-size: .65rem;
   font-weight: 400;
 }
 
 h3 {
   font-size: 2rem;
-  color: #2fc2ad;
+  color: #77a1fc;
 }
 
 .right button {
-  background-color: #2fc2ad;
+  background-color: #77a1fc;
   padding: 2%;
-  color: #03474b;
+  color: #031a4b;
   font-size: 1.15rem;
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+}
+
+/* Media queries */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 60%;
+    flex-direction: row;
+  }
+  .left {
+    width: 45%;
+  }
+  .right {
+    width: 45%;
+  }
 }

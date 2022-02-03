@@ -2,43 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ <img class="logo" src="./images/logo.svg" alt="Logo">
+  <div class="container">
 
-  Bill
+    <div class="left">
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <div class="bill">
+        <p>Bill</p>
+        <div class="input_container">
+          <img src="./images/icon-dollar.svg" alt="Dollar Sign">
+          <input type="number" placeholder="0">
+        </div>
+      </div>
 
-  Number of People
+      <div class="tip">
+        <p>Select Tip %</p>
+        <div class="tip_buttons">
+          <button>5%</button>
+          <button>10%</button>
+          <button class="active">15%</button>
+          <button>25%</button>
+          <button>50%</button>
+          <button>Custom</button>
+        </div>
+      </div>
 
-  Tip Amount
-  / person
+      <div class="people">
+        <p>Number of People</p>
+        <div class="input_container">
+          <img src="./images/icon-person.svg" alt="Avatar">
+          <input type="number" placeholder="0">
+        </div>
+      </div>
 
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <div class="right">
+      
+    </div>
   </div>
 </body>
 </html>

@@ -70,6 +70,9 @@ body {
   border: none;
   background-color: transparent;
   text-align: right;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #031a4b;
 }
 
 /* Placeholder styles */
@@ -117,6 +120,25 @@ input::-webkit-inner-spin-button {
 .tip_buttons button.custom {
   background-color: #f3f8fb;
   color: #031a4b;
+}
+
+.custom-button {
+  width: calc(90%/3);
+  margin: 2% 0;
+  padding: 3% 1%;
+  background-color: #f3f8fb;
+  color: #031a4b;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.custom-button::placeholder {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .people {

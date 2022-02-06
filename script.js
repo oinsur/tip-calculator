@@ -95,7 +95,7 @@ function lightProps() {
 // Change to dark
 function darkProps() {
   body.background = "#0b353a";
-  container.filter = "invert(.9)";
+  container.filter = "invert(0.9) hue-rotate(80deg)";
   theme.src = "./images/icon-sun.svg";
   
 }

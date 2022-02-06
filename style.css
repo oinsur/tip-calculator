@@ -207,6 +207,11 @@ h3 {
 /* theme button */
 #theme_btn {
   margin-bottom: 10%;
+  transition: all .5s;
+}
+
+#theme_btn:hover {
+  transform: scale(1.25);
 }
 
 /* Media queries */

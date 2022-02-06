@@ -204,6 +204,11 @@ h3 {
   cursor: pointer;
 }
 
+/* theme button */
+#theme_btn {
+  margin-bottom: 10%;
+}
+
 /* Media queries */
 @media screen and (min-width: 768px) {
   .container {
@@ -215,5 +220,8 @@ h3 {
   }
   .right {
     width: 45%;
+  }
+  #theme_btn {
+    margin-bottom: 0;
   }
 }

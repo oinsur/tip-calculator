@@ -10,6 +10,7 @@ let darkMode = false;
 let reset = document.getElementById("reset");
 // Access body style
 let body = document.body.style;
+// Access the container for the app
 let container = document.querySelector(".container").style;
 
 percent.forEach(function(btn){

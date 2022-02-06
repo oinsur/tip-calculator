@@ -4,7 +4,11 @@ let people = document.getElementById("number_of_people");
 let percent = document.querySelectorAll(".buttons");
 let tip = document.getElementById("tip_total");
 let total = document.getElementById("bill_total");
-
+let theme = document.getElementById("theme_btn");
+let darkMode = false;
+// Access body style
+let body = document.body.style;
+let container = document.querySelector(".container").style;
 bill.addEventListener("change", billInputFun);
 people.addEventListener("change", peopleInputFun);
 percent.forEach(function(btn){
@@ -46,9 +50,41 @@ function handleClick(event) {
 function calculateTip () {
     if (peopleValue >= 1) {
         let tipAmount = (billValue * tipValue) / peopleValue;
-        let totals = (billValue + tipAmount) / peopleValue;
+        let totals = (billValue/ peopleValue) + tipAmount;
         tip.innerHTML = tipAmount;
         total.innerHTML = totals;
     }
 }
+
+theme.addEventListener("click", function(){
+  // Write function for light and dark mode
+  if (darkMode == false) {
+    darkProps();
+    console.log("Dark mode");
+    darkMode = true;
+  } else {
+    lightProps();
+    console.log("light again");
+    darkMode = false;
+  }
+});
+
+// Change to light
+function lightProps() {
+  theme.src = "./images/icon-moon.svg";
+  body.background = ("#bbe1e6");
+  container.filter = "invert(0)";
+
+  
+}
+
+// Change to dark
+function darkProps() {
+  body.background = "#0b353a";
+  container.filter = "invert(.9)";
+  theme.src = "./images/icon-sun.svg";
+  
+}
+
+
 // https://www.youtube.com/watch?v=etYv-pPfol4

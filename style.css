@@ -19,13 +19,19 @@ body {
     align-items: center;
   }
 
+  /* Dark Mode Styles */
+  .dark {
+    filter: invert(.9);
+    background-color: #0b353a;
+  }
+
 .logo {
   margin-top: 5%;
 }
 
 .container {
   width: 90%;
-  margin: 5% auto;
+  margin: 5% auto 3%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,6 +73,7 @@ body {
 }
 
 .input_container input {
+  width: 100%;
   border: none;
   background-color: transparent;
   text-align: right;

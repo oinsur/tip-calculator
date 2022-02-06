@@ -5,56 +5,70 @@ let percent = document.querySelectorAll(".buttons");
 let tip = document.getElementById("tip_total");
 let total = document.getElementById("bill_total");
 let theme = document.getElementById("theme_btn");
+let custom = document.getElementById("custom");
 let darkMode = false;
+let reset = document.getElementById("reset");
 // Access body style
 let body = document.body.style;
 let container = document.querySelector(".container").style;
-bill.addEventListener("change", billInputFun);
-people.addEventListener("change", peopleInputFun);
+
 percent.forEach(function(btn){
-    btn.addEventListener("click", handleClick);
-})
+  btn.addEventListener("click", handleClick);
+});
 
-bill.value = 0;
-people.value = 1;
-tip.innerHTML = 0;
-total.innerHTML = 0;
+function tipSplit(billAmount, amtPeople, percentage) {
+  billAmount = parseFloat(bill.value);
+  amtPeople = parseFloat(people.value);
 
-let billValue = 0;
-let peopleValue = 1;
-let tipValue = .15;
-
-function billInputFun() {
-    billValue = parseInt(bill.value);
-    // console.log(billValue);
-    calculateTip();
-}
-
-function peopleInputFun() {
-    peopleValue = parseInt(people.value);
-    // console.log(peopleValue);
-    calculateTip();
+  if(custom.value) {
+    percentage = parseInt(custom.value)/100;
+    if(billAmount && amtPeople) {
+      let tipPerPerson = (billAmount * percentage) / amtPeople;
+      let totalPerPerson = (billAmount / amtPeople) + tipPerPerson;
+      tip.innerText = "$" + tipPerPerson.toFixed(2);
+      total.innerText = "$" + totalPerPerson.toFixed(2);
+    }
+  }
+  else if (billAmount && amtPeople && percentage) {
+    let tipPerPerson = (billAmount * percentage) / amtPeople;
+    let totalPerPerson = (billAmount / amtPeople) + tipPerPerson;
+    tip.innerText = "$" + tipPerPerson.toFixed(2);
+    total.innerText = "$" + totalPerPerson.toFixed(2);
+  }
 }
 
 function handleClick(event) {
-    percent.forEach(function(btn){
-        btn.classList.remove("active");
-        if (event.target.innerHTML == btn.innerHTML) {
-            btn.classList.add("active");
-            tipValue = parseInt(btn.innerHTML) / 100;
-        }
-    });
-    console.log(tipValue);
+  percent.forEach(function(btn){
+      btn.classList.remove("active");
+      if (event.target.innerHTML == btn.innerHTML) {
+          btn.classList.add("active");
+          percentage = parseInt(btn.innerHTML) / 100;
+      }
+  });
 }
 
-function calculateTip () {
-    if (peopleValue >= 1) {
-        let tipAmount = (billValue * tipValue) / peopleValue;
-        let totals = (billValue/ peopleValue) + tipAmount;
-        tip.innerHTML = tipAmount;
-        total.innerHTML = totals;
-    }
-}
+bill.addEventListener("change", tipSplit)
+
+// How do I grab the people input element?
+people.addEventListener("change", tipSplit)
+
+// How do I make it so when I click each button it will console log the percent
+percent.forEach((btn)=> {
+    btn.addEventListener("click", function() {
+        let btns = parseInt(btn.innerText)/100
+        tipSplit(bill, people, btns)
+    });
+});
+
+// reset button
+reset.addEventListener("click", function(){
+  tip.innerText = "$0.00";
+  total.innerText = "$0.00"
+  bill.value = "";
+  people.value = "";
+  custom.value = "";
+});
+
 
 theme.addEventListener("click", function(){
   // Write function for light and dark mode
@@ -85,6 +99,3 @@ function darkProps() {
   theme.src = "./images/icon-sun.svg";
   
 }
-
-
-// https://www.youtube.com/watch?v=etYv-pPfol4

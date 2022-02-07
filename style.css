@@ -46,14 +46,14 @@ body {
 }
 
 .container {
-  width: 90%;
-  margin: 5% auto 3%;
+  width: 100%;
+  margin: 5% auto 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
   background-color: white;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   
 }
 
@@ -235,6 +235,7 @@ h3 {
   .container {
     width: 60%;
     flex-direction: row;
+    border-radius: 20px;
   }
   .theme {
     right: 20%;

@@ -5,6 +5,7 @@ let percent = document.querySelectorAll(".buttons");
 let tip = document.getElementById("tip_total");
 let total = document.getElementById("bill_total");
 let theme = document.getElementById("theme_btn");
+let theme_btn = document.querySelector(".theme").style;
 let custom = document.getElementById("custom");
 let darkMode = false;
 let reset = document.getElementById("reset");
@@ -97,6 +98,7 @@ function lightProps() {
 function darkProps() {
   body.background = "#0b353a";
   container.filter = "invert(0.9) hue-rotate(80deg)";
+  theme_btn.boxShadow = "0 0 6px white";
   theme.src = "./images/icon-sun.svg";
   
 }

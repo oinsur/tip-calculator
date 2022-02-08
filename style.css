@@ -53,12 +53,10 @@ body {
   justify-content: space-between;
   padding: 20px;
   background-color: white;
-  /* border-radius: 20px; */
-  
+
 }
 
 .left {
-  /* margin: 0 auto; */
   width: 100%;
   padding: 15px;
   display: flex;
@@ -86,6 +84,11 @@ body {
   background-color: #f3f8fb;
   padding: 3%;
   border-radius: 5px;
+  transition: all .5s;
+}
+
+.input_container:hover {
+  border: inset 2px;
 }
 
 .input_container input {
@@ -96,6 +99,7 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   color: #031a4b;
+  outline: none;
 }
 
 /* Placeholder styles */

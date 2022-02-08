@@ -9,6 +9,7 @@ let theme_btn = document.querySelector(".theme").style;
 let custom = document.getElementById("custom");
 let darkMode = false;
 let reset = document.getElementById("reset");
+let resetMode = false;
 // Access body style
 let body = document.body.style;
 // Access the container for the app
@@ -63,12 +64,20 @@ percent.forEach((btn)=> {
 });
 
 // reset button
-reset.addEventListener("click", function(){
+reset.addEventListener("mousedown", function(){
   tip.innerText = "$0.00";
   total.innerText = "$0.00"
   bill.value = "";
   people.value = "";
   custom.value = "";
+  reset.style.background = "#314c87";
+  reset.style.color = "#ffffff";
+  restMode = true;  
+});
+reset.addEventListener("mouseup", function(){
+  reset.style.background = "#77a1fc";
+  reset.style.color = "#031a4b";
+  resetMode = false;
 });
 
 
@@ -90,8 +99,6 @@ function lightProps() {
   theme.src = "./images/icon-moon.svg";
   body.background = ("#bbe1e6");
   container.filter = "invert(0)";
-
-  
 }
 
 // Change to dark
@@ -100,5 +107,4 @@ function darkProps() {
   container.filter = "invert(0.9) hue-rotate(80deg)";
   theme_btn.boxShadow = "0 0 6px white";
   theme.src = "./images/icon-sun.svg";
-  
 }
